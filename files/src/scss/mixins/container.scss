@@ -1,0 +1,61 @@
+$md-c: 0;
+$lg-c: 0;
+$xl-c: 0;
+
+@mixin container($arg) {
+  @if ($arg == md) {
+    .container {
+      @media (max-width: #{$sm-max}) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      @media (min-width: #{$md}) {
+        width: #{$md-c};
+        margin: 0 auto;
+      }
+
+      @if ($lg-c != 0) {
+        @media (min-width: #{$lg}) {
+          width: #{$lg-c};
+        }
+      }
+
+      @if ($xl-c != 0) {
+        @media (min-width: #{$xl}) {
+          width: #{$xl-c};
+        }
+      }
+    }
+  } @else if ($arg == lg) {
+    .container {
+      @media (max-width: #{$md-max}) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      @media (min-width: #{$lg}) {
+        width: #{$lg-c};
+        margin: 0 auto;
+      }
+
+      @if ($xl-c != 0) {
+        @media (min-width: #{$xl}) {
+          width: #{$xl-c};
+        }
+      }
+    }
+  } @else if ($arg == xl) {
+    @media (min-width: #{$xl}) {
+      .container {
+        @media (max-width: #{$lg-max}) {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        width: #{$xl-c};
+        margin: 0 auto;
+      }
+    }
+  }
+}
