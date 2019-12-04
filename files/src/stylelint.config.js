@@ -11,43 +11,46 @@ module.exports = {
     'prettier/prettier': [
       true,
       {
-        singleQuote: true
+        'singleQuote': true
       }
     ],
     'order/order': [
       {
-        type: 'at-rule',
-        name: 'include',
-        hasBlock: false
+        'type': 'at-rule',
+        'name': 'include',
+        'hasBlock': false
       },
+      'dollar-variables',
+      'custom-properties',
       'declarations',
       {
-        type: 'at-rule',
-        name: 'include',
-        parameter: 'media',
-        hasBlock: true
+        'type': 'at-rule',
+        'name': 'include',
+        'parameter': 'media',
+        'hasBlock': true
       },
       {
-        type: 'at-rule',
-        name: 'media',
-        hasBlock: true
+        'type': 'at-rule',
+        'name': 'media',
+        'hasBlock': true
       },
       {
-        type: 'rule',
-        selector: '^&::\\w'
+        'type': 'rule',
+        'selector': /^&::\w/
       },
       {
-        type: 'rule',
-        selector: '^&:\\w+$'
+        'type': 'rule',
+        'selector': /^&:\S+$/
       },
       {
-        type: 'rule',
-        selector: '^&--\\w+\\s(?!.)'
+        'type': 'rule',
+        'selector': /^&--\w+$/
       },
       {
-        type: 'rule',
-        selector: '^&__'
+        'type': 'rule',
+        'selector': /^&__\w+$/
       }
-    ]
+    ],
+    'number-leading-zero': 'never'
   }
 }

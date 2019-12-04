@@ -21,7 +21,8 @@
 В нем задается определенный порядок свойств и сущностей, описанный в [SCSS | Style & Workflow Guide](../../scss).
 
 1. При инициализации проекта через CLI добавляем stylelint.
-2. Заменяем [stylelint.config.js](../src/stylelint.config.js) в корне проекта.
+2. `npm i -D prettier stylelint-prettier stylelint-config-prettier stylelint-scss stylelint-config-recommended-scss stylelint-config-rational-order`
+3. Заменяем [stylelint.config.js](../src/stylelint.config.js) в корне проекта.
 
 ------------------------------------------
 
@@ -36,8 +37,9 @@ module.exports = {
   rules: {
     'indent': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'space-before-function-paren': 'off',
     'vue/no-v-html': 'off',
-    'space-before-function-paren': 'off'
+    'vue/valid-template-root': 'off'
   }
 }
 ```
